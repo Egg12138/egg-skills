@@ -1,0 +1,22 @@
+[
+  {
+    "type": "format",
+    "name": "conventional_commits",
+    "format": "conventional_commits",
+    "severity": "error"
+  },
+  {
+    "type": "length",
+    "name": "subject_length",
+    "max_subject_length": 72,
+    "severity": "warning"
+  },
+  {
+    "type": "regex",
+    "name": "body_ticket",
+    "pattern": "(BREAKING CHANGE: .+|Refs?: .+)",
+    "severity": "warning",
+    "message": "Add a footer with BREAKING CHANGE or ticket reference if appropriate",
+    "multiline": true
+  }
+]

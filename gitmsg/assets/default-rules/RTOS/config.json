@@ -1,0 +1,10 @@
+{
+  "name": "RTOS",
+  "specification": "RTOS team git message convention:\n- Type prefixes: feat, fix, docs, style, refactor, test, chore, perf\n- Optional scope in parentheses\n- Subject: imperative mood, no period, max 72 chars\n- Body: wrap at 80 chars, explain what and why\n- Must include DST (Design Specification) or AR (Action Request) reference\n- Signed-off-by trailer required\n\nExample:\nfeat(timer): add high-resolution timer support\n\nImplement microsecond-precision timer for real-time scheduling.\nThis enables sub-millisecond task scheduling required for\nmotor control applications.\n\nDST: RT-2024-015\nSigned-off-by: John Doe <john@company.com>",
+  "author_config": {
+    "from_file": "~/.gitconfig"
+  },
+  "interactive": true,
+  "lint_enabled": true,
+  "created_at": "2026-01-27T00:00:00"
+}

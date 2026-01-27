@@ -1,0 +1,6 @@
+<type>(<scope>): <subject>
+
+<body>
+
+DST/AR: <reference>
+Signed-off-by: {{author}} <{{email}}>
