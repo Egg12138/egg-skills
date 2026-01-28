@@ -1,0 +1,33 @@
+# Linux Kernel Commit Message Patterns
+
+header_pattern: '^(?P<component>[a-z0-9-]+):(?P<subject> .+)?$'
+
+validation:
+  subject_max_length: 70
+  no_trailing_period: true
+  imperative_mood: true
+  body_wrap_width: 72
+  blank_line_after_subject: true
+
+trailers:
+  pattern: '^(?P<trailer>[A-Z][A-Za-z-]+): (?P<value>.+)$'
+  common:
+    - Fixes:
+    - Cc:
+    - Reported-by:
+    - Tested-by:
+    - Reviewed-by:
+    - Signed-off-by:
+    - Acked-by:
+    - Suggested-by:
+
+components:
+  pattern: '^[a-z0-9-]+$'
+  examples:
+    - driver
+    - mm
+    - fs
+    - net
+    - kernel
+    - Documentation
+    - scripts

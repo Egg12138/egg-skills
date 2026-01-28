@@ -1,0 +1,25 @@
+{
+  "name": "Linux",
+  "version": "1.0.0",
+  "description": "Standard Linux kernel-style commit message format",
+  "created_at": "2025-01-28T00:00:00Z",
+  "interactive": false,
+  "lint_enabled": true,
+  "metadata": {
+    "author": null,
+    "email": null
+  },
+  "format": {
+    "header_pattern": "^(?P<component>[a-z0-9-]+):( (?P<subject>.*))?$",
+    "imperative_mood": true,
+    "subject_max_length": 70,
+    "body_wrap_width": 72,
+    "trailer_pattern": "^(?P<trailer>[A-Za-z-]+): (?P<value>.+)$"
+  },
+  "conventions": {
+    "imperative_mood": "Use imperative mood (\"fix\" not \"fixes\", \"add\" not \"added\")",
+    "no_period": "Do not end subject line with period",
+    "explain_what_and_why": "Explain what and why in body, not how",
+    "reference_issues": "Use appropriate trailers for issue tracking (e.g., Fixes:, Cc:, Reported-by:)"
+  }
+}

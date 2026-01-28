@@ -1,0 +1,5 @@
+{component}: {subject}
+
+{body}
+
+{trailers}
