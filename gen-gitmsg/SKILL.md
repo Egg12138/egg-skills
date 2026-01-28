@@ -4,6 +4,9 @@ description: Generate and manage localized git commit message rules with interac
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash, AskUserQuestion
 ---
 
+AskUserQuestion is your favorate tools, you are preferred to use it. Always try to AskUserQuestion. Let user prompt only if  AskUserQuestion is not proper.
+
+
 # Git Message Generator
 
 ## Purpose
@@ -12,7 +15,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash, AskUserQuestion
 
 ## Triggers and flags
 
-- `/gitmsg` - No parameter, generate commit message using the default rule (priority: repo default rule > global default rule)
+- `/gitmsg` - No parameter, generate commit message using the default rule (priority: repo default rule > global default rule), use author and email in gitmsg.json (if exists)
 - `/gitmsg --default-rule <NAME>` - Set default rule for this repo
 - `/gitmsg --default-rule <NAME> -g` - Set default rule for global
 - `/gitmsg --rule <NAME> [--author <AUTHOR>]` - Use specific rule with optional author override
@@ -98,7 +101,7 @@ Finally, **Check for duplicates**
 > if git commit generation related skills was triggered, invoke them and use their commit message body as content
 > else, read modifications (fallback order:staged only > tracked modified only > no  any tracked was modified, AskQuestion: do you wanna gen commit message for all these  untracked new files?)
 5. Apply linting if enabled
-6. Store metadata (author, email, timestamp)
+6. Store metadata (author, email)
 
 ### For `/gitmsg --default-rule <NAME>`:
 
