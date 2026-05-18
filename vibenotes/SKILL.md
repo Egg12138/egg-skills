@@ -1,7 +1,7 @@
 ---
 name: vibenotes
 description: according to previous talkings, write learning notes for both beginer and experts into target location
-allowed-tools: Read,Find,Write,Grep,Edit,Bash
+allowed-tools: Read,Find,Write,Grep,Edit,Bash,AskUserQuestion
 ---
 
 # Code & Concept Explanation Skill
@@ -25,17 +25,53 @@ Educational explanations with adaptive depth and format.
 > each markdown needs a [toc]
 > If current source code workspace is a git repo, add footer comment about current  version (priority tag > remote branch > commit hash) and timestamp
 
-
 ## Flag
 
-`--org`: this is an option toggle vibenote skill to check vibenotes structure:
+Without flags, just do as what user said.
+With flag, consider:
+
+`--org`, `--dir`, `--commit`, `--compact <TOPIC>`
+
+`--org`: this is an option toggling vibenote skill to check and relocation vibenotes:
 1. make sure files of same topic are not spread everywhere, assemble them in a directory
 2. try to rename some directory or file, to make their name more exact 
 3. notice, you need only read [toc] of each .md, for saving token and efficiency
+4. relocation principle: is not necessary, keep unchanged
+5. symlink relocation: sometimes some notes can be subitem of different parts, use symlink to mark them.
+
 
 `--dir: default to be ~/source/vibenotes`
 `--commit`: generate commit message for current newly-added notes in vibenote repo:
 1. commit unit is about "TOPIC"
 2. add files created by current vibenote sessions and about the same topic
 3. add hunks(if necessary) about our current TOPIC. for example: vibenotes repo has file X, containing unstaged content about TopicA and TopicB, and our current vibenote topic is also about TopicA. We can simply add (best effort) all hunks about TopicA in fileX. leaving TopicB not added
+
+`--compact <TOPIC>`
+
+1. argument <TOPIC> is necassary, if empty, analyse topic first, `AskUserQuestion` for #what topic should be compacted, #topic should be more coarse-grained #topic should be more fine-grained or #not to compact; 
+2. after TOPIC is given, find notes about the topic, read them and give options to use, `AskUserQuestion` "which level of compact do you want?" (4options: light/medium/deep/Show partition breakdown first, mutual exclusively)
+3. generated compacted notes and explain its partitions (where does this part from from?)
+4. if user accepet the compacted notes, move raw notes into vibenotes directory .archive/
+5. principles:
+light/meidum level compact should try best to not lose information; make expression simpler, remove redundant expression are the keys;
+
+format of topic question
+```
+{
+  "questions": [
+    {
+      "question": "Which topic would you like to compact? Or do you want a coarse-grained or fine-grained topic?",
+      "header": "Compact Topic",
+      "options": [
+        { "label": "fine-grained", "description": "More Brief Topics List" },
+        { "label": "coarse-grained", "description": "More Detailed Topics List" },
+        {
+            "label": "<TOPIC>", "description": "<DESRIPTION>"
+        },...
+      ],
+      "multiSelect": true
+    }
+  ]
+}
+```
 
