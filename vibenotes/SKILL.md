@@ -30,7 +30,7 @@ Educational explanations with adaptive depth and format.
 Without flags, just do as what user said.
 With flag, consider:
 
-`--org`, `--dir`, `--commit`, `--compact <TOPIC>`
+`--org`, `--root-dir`, `--dir`, `--commit`, `--compact <TOPIC>`, `--update <note>`
 
 `--org`: this is an option toggling vibenote skill to check and relocation vibenotes:
 1. make sure files of same topic are not spread everywhere, assemble them in a directory
@@ -39,8 +39,10 @@ With flag, consider:
 4. relocation principle: is not necessary, keep unchanged
 5. symlink relocation: sometimes some notes can be subitem of different parts, use symlink to mark them.
 
+`--update <note>`: update content of note file <note>:  but this could be a fuzzy maching if <note> file is not found.
 
-`--dir: default to be ~/source/vibenotes`
+`--root-dir: default to be ~/source/vibenotes`, is --root-dir is given, consider vibenote root directory as the target directory
+`--dir`: specific a subdir under the root directory, fuzz name, mainly about "topic"
 `--commit`: generate commit message for current newly-added notes in vibenote repo:
 1. commit unit is about "TOPIC"
 2. add files created by current vibenote sessions and about the same topic
