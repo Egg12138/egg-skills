@@ -1,6 +1,6 @@
 ---
 name: learn-by-labs
-description: Design interactive "Learn X by Labs" courses with HTML lectures, progressive hints, instructor verification, and git worktree isolation. Use when the user wants to learn a technical topic, design a hands-on course, create a tutorial with experiments, build a coding curriculum, or structure knowledge into modules with labs. Triggers on phrases like "I want to learn X", "design a course for Y", "create interactive labs", "build a hands-on tutorial", "make a learning pathway for Z". This skill covers the entire lifecycle: domain decomposition, AGENTS.md bootstrapping, experiment design, HTML lecture authoring, instructor verification, and git worktree packaging for learners.
+description: design interactive "Learn X by Labs" labs with HTML lectures, makefile hints, and setup git worktree isolation. Use when the user wants to learn a technical topic, design a hands-on course, create a tutorial with experiments, build a coding curriculum, or structure knowledge into modules with labs.This skill is used only to establish an AGENTS.md which explain in details that what the experiemnts should do and what topics the lecture should be.
 ---
 
 # Learn-by-Labs: Design Interactive Courses with Experiments and HTML Lectures
@@ -10,13 +10,12 @@ A content-agnostic methodology for designing hands-on technical courses where le
 ## The lifecycle (do NOT skip phases)
 
 ```
-Phase 1: Blueprint   →  AGENTS.md + directory skeleton + Makefile
-Phase 2: Design      →  lab scripts + solutions + hints + HTML lectures
-Phase 3: Verify      →  run EVERY experiment from scratch, fix everything ★
-Phase 4: Package     →  commit solutions to main, prepare learner worktrees
+Phase 1: Blueprint   →  AGENTS.md blueprint chapter + directory skeleton + Makefile
+Phase 2: Design      →  AGENTS.md describe intensions of lab scripts/codes + solutions + hints + HTML lectures
+Phase 3: Verify      →  AGENTS.md should said that: "run EVERY experiment from scratch, fix everything" ★
+Phase 4: Package     →  AGENTS.md should said that: "commit solutions to main, prepare learner worktrees"
 ```
-
-**Phase 3 is the quality anchor.** If you skip verification, the course is a rough draft, not a finished product. Every experiment must be proven to work in the target environment.
+Note: AGENTS.md should contains a `## PROGRESS` chapter for future agents to record what has been down already.
 
 ---
 
